@@ -22,14 +22,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: appBarHome(),
-        drawer: Drawer(),
         body: SingleChildScrollView(
           child: Column(children: [
             const Header(),
             CardsProduto(),
             Row(
               children: const [
-              
                 Padding(
                   padding: EdgeInsets.only(left: 20, top: 25),
                   child: Text(

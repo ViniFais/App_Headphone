@@ -9,12 +9,11 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> {
-  final _form = GlobalKey<FormState>();
-  final _valor = TextEditingController();
-  static Map<String, Color> cardColor = <String, Color>{
+  static Map<String, Color> cores = <String, Color>{
     '1': Colors.teal,
     '2': Colors.indigo,
     '3': Color.fromARGB(255, 182, 182, 182),
+    '4': Color.fromARGB(255, 145, 145, 145),
   };
 
   @override
@@ -25,25 +24,24 @@ class _HeaderState extends State<Header> {
           padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
           child: Card(
             elevation: 8,
-            color: cardColor['3'],
+            color: cores['3'],
             child: Padding(
               padding: const EdgeInsets.all(6),
               child: Form(
-                  key: _form,
                   child: TextFormField(
-                    controller: _valor,
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Buscar produto',
-                      prefixIcon: Icon(Icons.search),
-                      suffixIcon: Icon(Icons.mic_rounded),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                    ),
-                    keyboardType: TextInputType.text,
-                  )),
+                style: TextStyle(
+                  fontSize: 15,
+                ),
+                decoration: InputDecoration(
+                  hintText: 'Buscar produto',
+                  prefixIcon: Icon(Icons.search),
+                  suffixIcon: IconButton(
+                      onPressed: () {}, icon: Icon(Icons.mic_rounded)),
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+                keyboardType: TextInputType.text,
+              )),
             ),
           ),
         ),
@@ -57,12 +55,15 @@ class _HeaderState extends State<Header> {
                 'Categorias',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              Text('Todas',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                    color: Color.fromARGB(255, 145, 145, 145),
-                  ))
+              TextButton(
+                child: Text('Todas',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: cores['4'],
+                    )),
+                onPressed: () {},
+              )
             ],
           ),
         ),

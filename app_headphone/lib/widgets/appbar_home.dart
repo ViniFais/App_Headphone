@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 appBarHome() {
   return AppBar(
     backgroundColor: Colors.transparent,
+    leading: IconButton(onPressed: (){}, icon: Icon(Icons.menu),),
     title: Text(
       'Headphone',
-      style: TextStyle(fontWeight: FontWeight.bold)
+      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)
       //style: TextStyle(fontWeight: FontWeight.bold),
     ),
     centerTitle: true,

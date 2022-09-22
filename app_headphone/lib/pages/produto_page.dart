@@ -12,7 +12,6 @@ class ProdutoPage extends StatefulWidget {
 
 class _ProdutoPageState extends State<ProdutoPage> {
  
-
   int _contador = 0;
   void _incrementoContador() {
     setState(() {
@@ -45,7 +44,7 @@ class _ProdutoPageState extends State<ProdutoPage> {
       appBar: AppBar(
         backgroundColor: cores['9'],
         title: Text(
-          'VRF som',
+          'Headphone',
           style: TextStyle(fontWeight: FontWeight.w700, color: cores['4']),
         ),
         leading: IconButton(
@@ -80,7 +79,7 @@ class _ProdutoPageState extends State<ProdutoPage> {
                 ],
               ),
               SizedBox(
-                height: 18,
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -161,7 +160,7 @@ class _ProdutoPageState extends State<ProdutoPage> {
                 ],
               ),
               SizedBox(
-                height: 50,
+                height: 70,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -201,7 +200,7 @@ class _ProdutoPageState extends State<ProdutoPage> {
                             Color.fromARGB(255, 255, 255, 255))),
                     onPressed: () {},
                     child: Padding(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.only(top: 15, bottom: 15, left: 25, right: 25),
                       child: Text(
                         'R\$ ' + widget.produto.preco,
                         style: TextStyle(color: cores['6']),
